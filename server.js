@@ -7,7 +7,12 @@ const io = socket(server);
 
 const rooms = {};
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
+
+app.get('/user', function (req, res) {
+  console.log('/user request called');
+  res.send('Welcome to GeeksforGeeks');
+});
 
 io.on('connection', socket => {
   /*
@@ -55,6 +60,6 @@ io.on('connection', socket => {
   });
 });
 
-server.listen(PORT , e => {
+server.listen(PORT, e => {
   console.log('Server is up and running on Port 8000');
 });
