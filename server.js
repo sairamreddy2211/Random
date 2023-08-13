@@ -7,6 +7,8 @@ const io = socket(server);
 
 const rooms = {};
 
+const PORT = process.env.PORT || 8000
+
 io.on('connection', socket => {
   /*
         If a peer is initiator, he will create a new room
@@ -53,6 +55,6 @@ io.on('connection', socket => {
   });
 });
 
-server.listen(8000, '192.168.0.3', e => {
+server.listen(PORT , e => {
   console.log('Server is up and running on Port 8000');
 });
